@@ -1,0 +1,138 @@
+# 🏠 House Price Predictor
+
+An end-to-end machine learning project that predicts house prices using a trained regression model. The system includes a FastAPI backend and a Streamlit web interface for real-time predictions.
+
+---
+
+## 🚀 What this project does
+
+- Trains a machine learning model on housing data
+- Exposes the model through a REST API
+- Provides a simple web UI for predictions
+- Accepts user input and returns predicted house price instantly
+
+---
+
+## 🧠 Tech Stack
+
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- FastAPI
+- Uvicorn
+- Streamlit
+- Requests
+
+---
+
+## 📁 Project Structure
+
+
+house-price-predictor/
+│
+├── model/
+│ ├── init.py
+│ ├── train.py
+│ ├── predict.py
+│ └── model.pkl
+│
+├── api/
+│ ├── init.py
+│ └── main.py
+│
+├── data/
+│ └── housing.csv
+│
+├── app.py
+├── requirements.txt
+└── README.md
+
+
+---
+
+## 📊 Model Inputs
+
+The model uses the following features:
+
+- Longitude  
+- Latitude  
+- Housing median age  
+- Total rooms  
+- Total bedrooms  
+- Population  
+- Households  
+- Median income  
+
+Target:
+- Median house value
+
+---
+
+## ⚙️ How it works
+
+1. Data is loaded and cleaned  
+2. Features are selected  
+3. Random Forest model is trained  
+4. Model is saved using pickle  
+5. FastAPI serves `/predict` endpoint  
+6. Streamlit UI sends input to API  
+7. API returns predicted price  
+
+---
+
+## 🛠️ Installation
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+🏋️ Train the model
+cd model
+python train.py
+
+This will generate:
+
+model.pkl
+🌐 Run the API
+python -m uvicorn api.main:app --reload
+
+Open API docs:
+
+http://127.0.0.1:8000/docs
+
+💻 Run the Web App
+python -m streamlit run app.py
+📥 Example Request
+{
+  "longitude": -122.23,
+  "latitude": 37.88,
+  "housing_median_age": 41,
+  "total_rooms": 880,
+  "total_bedrooms": 129,
+  "population": 322,
+  "households": 126,
+  "median_income": 8.3252
+}
+
+📤 Example Output
+Predicted House Price: ~$452,000
+
+
+📌 Key Learnings
+End-to-end ML pipeline development
+Feature selection and preprocessing
+Building REST APIs with FastAPI
+Connecting ML model with frontend UI
+Real-world deployment workflow
+🔮 Future Improvements
+Add hyperparameter tuning
+Improve preprocessing pipeline
+Deploy on cloud (Render / AWS / Railway)
+Add Docker support
+Improve UI design
+
+
+👨‍💻 Author
+
+Talib Zaidi
+Aspiring AI/ML Engineer
