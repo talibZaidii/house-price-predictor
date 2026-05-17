@@ -1,3 +1,12 @@
+## Demo
+
+### Streamlit UI
+![UI Screenshot](assets/New%20Project-2.png)
+
+### FastAPI Docs
+![API Screenshot](assets/New%20Project.png)
+
+
 # 🏠 House Price Predictor
 
 An end-to-end machine learning project that predicts house prices using a trained regression model. The system includes a FastAPI backend and a Streamlit web interface for real-time predictions.
