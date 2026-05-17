@@ -7,10 +7,10 @@ An end-to-end machine learning project that predicts house prices using a traine
 ## 🚀 Demo
 
 ### Streamlit UI
-![UI Screenshot](ui.png)
+![UI Screenshot](assets/ui.png)
 
 ### FastAPI Docs
-![API Screenshot](api.png)
+![API Screenshot](assets/api.png)
 
 ---
 
