@@ -1,148 +1,74 @@
-# 🏠 House Price Predictor
+# House Price Prediction System (End-to-End ML App)
 
-An end-to-end machine learning project that predicts house prices using a trained regression model. The system includes a FastAPI backend and a Streamlit web interface for real-time predictions.
-
----
-
-## 🚀 Demo
-
-### Streamlit UI
-![UI Screenshot](assets/ui.png)
-
-### FastAPI Docs
-![API Screenshot](assets/api.png)
+Developed and deployed an end-to-end machine learning application that predicts house prices using regression models with real-time API integration.
 
 ---
 
-## 🚀 What this project does
+## 📸 Demo
 
-- Trains a machine learning model on housing data
-- Exposes the model through a REST API
-- Provides a simple web UI for predictions
-- Accepts user input and returns predicted house price instantly
+![API Demo](assets/ui.png)
+![API Demo](assets/api.png)
 
 ---
 
-## 🧠 Tech Stack
+## 🧠 What it does
 
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- FastAPI
-- Uvicorn
-- Streamlit
-- Requests
+Users input house-related features and the system predicts the estimated price using a trained regression model served through an API and Streamlit interface.
+
+---
+
+## ⚙️ Key Features
+
+• Cleaned and processed housing datasets by handling missing values, outliers, and inconsistent features  
+• Performed feature engineering and data transformation for model readiness  
+• Trained and compared multiple regression models using Scikit-learn  
+• Selected the best-performing model based on evaluation metrics  
+• Built a FastAPI backend for real-time prediction serving  
+• Developed a Streamlit frontend for interactive user input and predictions  
+
+---
+
+## 🧪 Model Workflow
+
+
+Input Features → Data Preprocessing → Feature Engineering → Regression Model → Price Prediction
+
+---
+
+## 🛠️ Tech Stack
+
+Python · Pandas · NumPy · Scikit-learn · FastAPI · Streamlit
+
+---
+
+## 🧩 Skills
+
+Machine Learning · Regression Analysis · Feature Engineering · API Development · Model Deployment · Data Preprocessing
 
 ---
 
 ## 📁 Project Structure
 
 
-house-price-predictor/
+House-Price-Prediction/
 │
-├── model/
-│ ├── init.py
-│ ├── train.py
-│ ├── predict.py
-│ └── model.pkl
-│
-├── api/
-│ ├── init.py
-│ └── main.py
-│
-├── data/
-│ └── housing.csv
-│
-├── app.py
-├── requirements.txt
-└── README.md
+├── app.py # Streamlit frontend
+├── main.py # FastAPI backend
+├── model.pkl # Trained regression model
+├── scaler.pkl # Feature scaler
+├── assets/
+│ ├── demo.png
+│ ├── ui.png
+│ └── prediction.png
+├── notebooks/
+└── requirements.txt
 
 
 ---
 
-## 📊 Model Inputs
-
-The model uses the following features:
-
-- Longitude  
-- Latitude  
-- Housing median age  
-- Total rooms  
-- Total bedrooms  
-- Population  
-- Households  
-- Median income  
-
-Target:
-- Median house value
-
----
-
-## ⚙️ How it works
-
-1. Data is loaded and cleaned  
-2. Features are selected  
-3. Random Forest model is trained  
-4. Model is saved using pickle  
-5. FastAPI serves `/predict` endpoint  
-6. Streamlit UI sends input to API  
-7. API returns predicted price  
-
----
-
-## 🛠️ Installation
-
-Install dependencies:
+## ▶️ Run Locally
 
 ```bash
 pip install -r requirements.txt
-🏋️ Train the model
-cd model
-python train.py
-
-This will generate:
-
-model.pkl
-🌐 Run the API
-python -m uvicorn api.main:app --reload
-
-Open API docs:
-
-http://127.0.0.1:8000/docs
-
-💻 Run the Web App
-python -m streamlit run app.py
-📥 Example Request
-{
-  "longitude": -122.23,
-  "latitude": 37.88,
-  "housing_median_age": 41,
-  "total_rooms": 880,
-  "total_bedrooms": 129,
-  "population": 322,
-  "households": 126,
-  "median_income": 8.3252
-}
-
-📤 Example Output
-Predicted House Price: ~$452,000
-
-
-📌 Key Learnings
-End-to-end ML pipeline development
-Feature selection and preprocessing
-Building REST APIs with FastAPI
-Connecting ML model with frontend UI
-Real-world deployment workflow
-🔮 Future Improvements
-Add hyperparameter tuning
-Improve preprocessing pipeline
-Deploy on cloud (Render / AWS / Railway)
-Add Docker support
-Improve UI design
-
-
-👨‍💻 Author
-
-Talib Zaidi
-Aspiring AI/ML Engineer
+uvicorn main:app --reload
+streamlit run app.py
